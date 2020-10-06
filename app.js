@@ -8,7 +8,7 @@ mongoose.Promise = require('bluebird');
 //mongoose.connect('mongodb://localhost/mern-crud', { useMongoClient: true, promiseLibrary: require('bluebird') })
 // 'mongodb://localhost/mern-crud'
 // 'mongodb+srv://admin-jacky:test123@cluster0.irbse.mongodb.net/libraryDB?retryWrites=true&w=majority'
-mongoose.connect("mongodb+srv://admin-jacky:test123@cluster0.irbse.mongodb.net/libraryDB?retryWrites=true&w=majority", {
+mongoose.connect("mongodb://admin-jacky:test123@cluster0-shard-00-00.irbse.mongodb.net:27017,cluster0-shard-00-01.irbse.mongodb.net:27017,cluster0-shard-00-02.irbse.mongodb.net:27017/libraryDB?ssl=true&replicaSet=atlas-5m3ql7-shard-0&authSource=admin&retryWrites=true&w=majority", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
