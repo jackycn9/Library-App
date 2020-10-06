@@ -5,11 +5,15 @@ var logger = require('morgan');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
-mongoose.connect('mongodb://localhost/mern-crud', { useMongoClient: true, promiseLibrary: require('bluebird') })
+//mongoose.connect('mongodb://localhost/mern-crud', { useMongoClient: true, promiseLibrary: require('bluebird') })
 // 'mongodb://localhost/mern-crud'
 // 'mongodb+srv://admin-jacky:test123@cluster0.irbse.mongodb.net/libraryDB?retryWrites=true&w=majority'
-.then(() =>  console.log('connection succesful'))
-  .catch((err) => console.error(err));
+mongoose.connect("mongodb+srv://admin-jacky:test123@cluster0.irbse.mongodb.net/libraryDB?retryWrites=true&w=majority", {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
+/* .then(() =>  console.log('connection succesful'))
+  .catch((err) => console.error(err)); */
 
 var book = require('./routes/book');
 var app = express();
